@@ -21,7 +21,7 @@ subprojects {
         resilience4jVersion = '2.3.0'
         okHttpVersion = '4.12.0'
 
-        group = 'com.github.mkopylec'
+        group = 'com.github.bjansen'
         pomContent = {
             name = 'Charon Spring Boot Starter'
             description = 'Reverse proxy implementation in form of Spring Boot starter'
@@ -75,7 +75,7 @@ subprojects {
 }
 
 nexusPublishing {
-    packageGroup = 'com.github.mkopylec'
+    packageGroup = 'com.github.bjansen'
     repositories {
         sonatype {
             username = project.ext.has('ossrhUsername') ? project.ext.ossrhUsername : ''
