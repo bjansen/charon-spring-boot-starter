@@ -10,7 +10,4 @@ class NoExceptionErrorHandler implements ResponseErrorHandler {
         return false;
     }
 
-    @Override
-    public void handleError(ClientHttpResponse response) {
-    }
 }

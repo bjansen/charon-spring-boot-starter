@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.github.mkopylec.charon.forwarding.OkClientHttpRequestFactoryCreatorConfigurer.okClientHttpRequestFactoryCreator;
+import static com.github.mkopylec.charon.forwarding.HttpComponentsClientHttpRequestFactoryCreatorConfigurer.httpComponentsClientHttpRequestFactoryCreator;
 import static com.github.mkopylec.charon.forwarding.TimeoutConfigurer.timeout;
 import static java.util.stream.Collectors.toList;
 
@@ -22,7 +22,7 @@ public class RestTemplateConfiguration implements Valid {
 
     RestTemplateConfiguration() {
         this.timeoutConfiguration = timeout().configure();
-        this.clientHttpRequestFactoryCreator = okClientHttpRequestFactoryCreator().configure();
+        this.clientHttpRequestFactoryCreator = httpComponentsClientHttpRequestFactoryCreator().configure();
         clientHttpRequestInterceptors = new ArrayList<>();
     }
 

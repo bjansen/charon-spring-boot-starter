@@ -5,5 +5,7 @@ logging:
 server:
   tomcat:
     connection-timeout: 0
-  error:
-    include-message: always
+spring:
+  web:
+    error:
+      include-message: always

@@ -2,6 +2,7 @@ logging:
   level:
     com.github.mkopylec.charon: trace
 
-server:
-  error:
-    include-message: always
+spring:
+  web:
+    error:
+      include-message: always

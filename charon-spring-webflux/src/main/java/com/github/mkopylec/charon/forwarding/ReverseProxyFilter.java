@@ -1,7 +1,7 @@
 package com.github.mkopylec.charon.forwarding;
 
 import com.github.mkopylec.charon.configuration.RequestMappingConfiguration;
-import org.springframework.boot.web.reactive.filter.OrderedWebFilter;
+import org.springframework.boot.webflux.filter.OrderedWebFilter;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.web.reactive.function.client.WebClient;

@@ -3,7 +3,7 @@ apply plugin: 'jacoco'
 dependencies {
     api project(':charon-common').sourceSets.main.output
     api group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
-    api group: 'com.squareup.okhttp3', name: 'okhttp', version: okHttpVersion
+    api group: 'org.apache.httpcomponents.client5', name: 'httpclient5', version: httpClient5Version
 
     testImplementation project(':charon-test')
 }

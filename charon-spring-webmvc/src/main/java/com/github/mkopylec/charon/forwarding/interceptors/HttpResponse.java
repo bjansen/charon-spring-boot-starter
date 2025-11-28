@@ -36,11 +36,6 @@ public class HttpResponse implements ClientHttpResponse {
     }
 
     @Override
-    public int getRawStatusCode() {
-        return status.value();
-    }
-
-    @Override
     public String getStatusText() {
         return status.toString();
     }

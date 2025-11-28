@@ -1,12 +1,12 @@
 package com.github.mkopylec.charon.test.utils
 
-import okhttp3.OkHttpClient
-import org.springframework.boot.test.web.client.TestRestTemplate
+import org.apache.hc.client5.http.impl.classic.HttpClientBuilder
+import org.springframework.boot.resttestclient.TestRestTemplate
 import org.springframework.http.HttpEntity
 import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpMethod
 import org.springframework.http.ResponseEntity
-import org.springframework.http.client.OkHttp3ClientHttpRequestFactory
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory
 import org.springframework.stereotype.Component
 
 @Component
@@ -39,14 +39,12 @@ class HttpClient {
     }
 
     private void setup() {
-        def client = new OkHttpClient.Builder()
-                .followRedirects(false)
-                .followSslRedirects(false)
+        def client = HttpClientBuilder.create()
+                .disableRedirectHandling()
                 .build()
-        def requestFactory = new OkHttp3ClientHttpRequestFactory(client)
-        requestFactory.connectTimeout = 100
+        def requestFactory = new HttpComponentsClientHttpRequestFactory(client)
+        requestFactory.connectionRequestTimeout = 100
         requestFactory.readTimeout = 100000
-        requestFactory.writeTimeout = 100000
         restTemplate.restTemplate.requestFactory = requestFactory
     }
 }
